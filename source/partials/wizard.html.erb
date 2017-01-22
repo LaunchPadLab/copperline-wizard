@@ -1,0 +1,343 @@
+---
+title: Verification Wizard
+---
+<main>
+  <section>
+    <form id="msform">
+      <ul id="progressbar">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <fieldset>
+        <!--
+        <h5>Welcome back, let’s verify your current information!</h5>
+        <h5>Welcome back, let’s re-verify your info.</h5>
+        -->
+        <h3>
+          Enter the sixteen digit account number on your CopperLine Card:
+          <div class="tooltip-item">
+            ?
+            <div class="tooltip tooltip-image">
+              <img src="images/cc.png">
+              <p>Your account number is the number on the front of your Copperline Account Card. If you don’t have your card, call 800-260-4897 ext 2 and activate your account through a call center agent.</p>
+            </div>
+          </div>
+        </h3>
+        <div class="inputs half-input">
+          <field class="error">
+            <input type="tel" name="" placeholder="1111–1111–1111–1111">
+            <span>Card doesn't exist</span>
+          </field>
+        </div>
+          <input type="button" name="next" class="next action-button add-break" value="Next" />
+      </fieldset><!--
+      <fieldset>
+        <h3>You’re from ABC Technology Company, LLC, is that correct?</h3>
+        <input type="button" name="next" class="next action-button" value="Yes" />
+        <input type="button" name="next" class="next action-button inactive-button" value="No" />
+      </fieldset>
+      <fieldset>
+        <h3>Company Name:</h3>
+        <field>
+          <input type="text" placeholder="" />
+        </field>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h3>Who is this?</h3>
+        <div class="inputs half-input">
+          <field>
+            <input type="text" placeholder="Full Name" />
+          </field>
+          <field>
+            <input type="text" placeholder="Title" />
+          </field>
+        </div>
+        <div class="inputs half-input">
+          <field>
+            <input type="email" placeholder="name@example.com" />
+          </field>
+          <field>
+            <input type="tel" placeholder="(111)-111-1111" />
+          </field>
+        </div>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h3>Is Michael Jones still the President of ABC Technology company?</h3>
+        <input type="button" name="next" class="next action-button" value="Yes" />
+        <input type="button" name="next" class="next action-button inactive-button" value="No" />
+      </fieldset>
+      <fieldset>
+        <h3>President of ABC Technology Company:</h3>
+        <field>
+          <input type="text" placeholder="" />
+        </field>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h3>Are you Michael Jones?</h3>
+        <input type="button" name="next" class="next action-button" value="Yes" />
+        <input type="button" name="next" class="next action-button inactive-button" value="No" />
+      </fieldset>
+      <fieldset>
+        <h3>Your Name:</h3>
+        <field>
+          <input type="text" placeholder="" />
+        </field>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h3>Michael, enter your e-mail address and your phone number: </h3>
+        <div class="inputs half-input">
+          <field>
+            <input type="email" placeholder="name@example.com" />
+          </field>
+          <field>
+            <input type="tel" placeholder="(111)-111-1111" />
+          </field>
+        </div>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h3>
+          Michael, are you the 100% owner of ABC Technology?
+          <div class="tooltip-item">
+            ?
+            <div class="tooltip">
+              <p>We need to verify and understand the ownership structure of your company.</p>
+            </div>
+          </div>
+        </h3>
+        <input type="button" name="next" class="next action-button" value="Yes" />
+        <input type="button" name="next" class="next action-button inactive-button" value="No" />
+      </fieldset>
+      <fieldset>
+        <h3>Owner(s) of ABC Technology:</h3>
+        <div class="percentage">
+          <h5>Full Name</h5>
+          <h5>% Ownership</h5>
+        </div>
+        <div class="percentage">
+          <field class="full-name">
+            <input type="text" placeholder="" />
+          </field>
+          <field class="percent-symbol">
+            <input type="text" placeholder="" />
+          </field>
+        </div>
+        <div class="percentage">
+          <field class="full-name">
+            <input type="text" placeholder="" />
+          </field>
+          <field class="percent-symbol">
+            <input type="text" placeholder="" />
+          </field>
+        </div>
+        <div class="percentage">
+          <field class="full-name">
+            <input type="text" placeholder="" />
+          </field>
+          <field class="percent-symbol">
+            <input type="text" placeholder="" />
+          </field>
+        </div>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h3>
+          Michael, for your protection, we need to verify your identity through Experian, is this ok?
+          <div class="tooltip-item">
+            ?
+            <div class="tooltip">
+              <p>We use the Experian credit report to verify your identity and to provide you with a pre-qualification for credit for your company. This is a “soft pull” of your report for pre-screening purposes. It will not affect your credit score or put an inquiry on your report. We will reserve the right to pull your credit report if you choose to accept the terms and conditions of our loan offer.</p>
+            </div>
+          </div>
+        </h3>
+        <p>This will not affect your FICO credit score and there will be no inquiry on your credit report.  View <a href="#" target="_blank">terms and conditions</a>.</p>
+        <input type="button" name="next" class="next action-button" value="Yes" />
+        <input type="button" name="next" class="next action-button inactive-button" value="No" />
+      </fieldset>-->
+      <fieldset>
+        <h3>
+          Michael, enter your home address and date of birth so we can verify this information with the Experian credit report.
+          <div class="tooltip-item">
+            ?
+            <div class="tooltip">
+              <p>We use the  your home address to match with your Experian credit report. This is a “soft pull” of your report for pre-screening purposes. It will not affect your credit score or put an inquiry on your report. </p>
+            </div>
+          </div>
+        </h3>
+        <label>Home Address</label>
+        <div class="inputs full-input">
+          <input type="text" placeholder="Street" />
+        </div>
+        <div class="inputs third-input">
+          <field>
+            <input type="text" placeholder="City" />
+          </field>
+          <field>
+            <input type="text" placeholder="State" />
+          </field>
+          <field>
+            <input type="tel" placeholder="Zip Code" />
+          </field>
+        </div>
+        <label>Date of Birth</label>
+        <div class="inputs half-input">
+          <field>
+            <input type="text" placeholder="MM/DD/YYYY" />
+          </field>
+        </div>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h3>Your company was founded in 2006, is that correct?</h3>
+        <input type="button" name="next" class="next action-button" value="Yes" />
+        <input type="button" name="next" class="next action-button inactive-button" value="No" />
+      </fieldset>
+      <fieldset>
+        <h3>Year Founded:</h3>
+        <div class="inputs half-input">
+          <field>
+            <input type="text" placeholder="" />
+          </field>
+        </div>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h3>And you have 7 employees, is that correct?</h3>
+        <input type="button" name="next" class="next action-button" value="Yes" />
+        <input type="button" name="next" class="next action-button inactive-button" value="No" />
+      </fieldset>
+      <fieldset>
+        <h3>Number of Employees:</h3>
+        <div class="inputs half-input">
+          <field>
+            <input type="text" placeholder="" />
+          </field>
+        </div>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h3>We were unable to verify with your address. We will need to verify with your social security number.</h3>
+        <div class="inputs half-input">
+          <field>
+            <input type="tel" placeholder="XXX XX XXXX" />
+          </field>
+        </div>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h3>Your annual revenues are about $310,000 is that correct?</h3>
+        <input type="button" name="next" class="next action-button" value="Yes" />
+        <input type="button" name="next" class="next action-button inactive-button" value="No" />
+      </fieldset>
+      <fieldset>
+        <h3>Annual Revenue:</h3>
+        <div class="inputs half-input">
+          <field class="currency-symbol">
+            <input type="tel" placeholder="" />
+          </field>
+        </div>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h3>
+          What was your approximate profit last year?
+          <div class="tooltip-item">
+            ?
+            <div class="tooltip">
+              <p>Loans do not require profitability but it may affect the rates and terms of your loan offer.</p>
+            </div>
+          </div>
+        </h3>
+        <input class="slider" value="0" min="-80000" max="80000" name="rangeslider" type="range" step="10000"/>
+        <ul class="three-range">
+          <li>- $80,000</li>
+          <li>$0</li>
+          <li>$80,000</li>
+        </ul>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h3>Is any part of this loan for equipment?</h3>
+        <input type="button" name="next" class="next action-button" value="Yes" />
+        <input type="button" name="next" class="next action-button inactive-button" value="No" />
+      </fieldset>
+      <fieldset>
+        <h3>Are you going to use this loan to consolidate other loans?</h3>
+        <input type="button" name="next" class="next action-button" value="Yes" />
+        <input type="button" name="next" class="next action-button inactive-button" value="No" />
+      </fieldset>
+      <fieldset>
+        <h3>Personal income of Jan from ABC Technology Company and other sources:</h3>
+        <div class="inputs half-input">
+          <field class="currency-symbol">
+            <input type="tel" placeholder="" />
+          </field>
+        </div>
+        <input type="button" name="next" class="next action-button" value="Next" />
+        <a href="" class="skip-button">Skip and come back later</a>
+      </fieldset>
+      <fieldset>
+        <h5>You're All Set!</h5>
+        <h3>Your CopperLine Account Manager is going to be Sharon Boyer. Here’s Sharon’s contact information.</h3>
+        <div class="contact-block">
+          <img src="images/sharon.jpg" class="point-of-contact">
+          <div class="contact-info">
+            <p><strong>Sharon Boyer</strong> <br>800-260-4897 x713<br>sharon@copperlineusa.com</p>
+            <p>Branch Office: Chicago</p>
+          </div>
+        </div>
+        <hr><br>
+        <p>She’s going to give you some different financing options and verify your revenue prior to funding.</p>
+      </fieldset>
+    </form>
+  </section>
+
+  <nav class="sliding-panel-content">
+    <h4>Card Activation</h4>
+    <div class="sliding-panel-close"><img src="images/close.svg"></div>
+    <ul class="question-list">
+      <li><a href="#" class="checked">Card Number</a></li>
+      <li><a href="#" class="checked">Company Name</a></li>
+      <li class="active"><a href="#">Company President</a></li>
+      <li><a href="#">Is that you?</a></li>
+      <li><a href="#">Contact Info</a></li>
+      <li><a href="#">100% Owner</a></li>
+      <li><a href="#">Verify ID</a></li>
+      <li><a href="#">Home Address & DOB</a></li>
+      <li><a href="#">Year Founded</a></li>
+      <li><a href="#">Number of Employees</a></li>
+      <li><a href="#">Annual Revenue</a></li>
+      <li><a href="#">Last Year’s Profit</a></li>
+      <li><a href="#">Use Case</a></li>
+      <li><a href="#">Select Offer</a></li>
+    </ul>
+  </nav>
+
+  <div class="sliding-panel-fade-screen"></div>
+</main>
+<script>
+  window.intercomSettings = {
+    app_id: "ft3n9g7e",
+    name: "Michael", // Full name
+    email: "customer@example.com", // Email address
+    created_at: 1312182000 // Signup date as a Unix timestamp
+  };
+</script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/ft3n9g7e';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>

@@ -1,0 +1,151 @@
+// Site Navigation Styles
+// ========================================
+$mobile-nav-height: 65px;
+$desktop-nav-height: 81px;
+
+.navigation {
+  background-color: $white-base;
+  display: inline-block;
+  @include rem(padding, 10px 20px);
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  @include media($tablet){
+    @include rem(padding, 20px 20px);
+  }
+}
+
+
+/*-----------------------
+Logo
+-----------------------*/
+.logo{
+  @include rem(margin-bottom, 0px);
+  @include transition(all 0.3s ease-in-out);
+
+  @include media($tablet){
+    float: left;
+    text-align: left;
+  }
+
+  h1{
+    color: $grey-base;
+    @include s-small;
+    @include rem(margin, 8px 0px);
+
+    @include media($tablet){
+     @include s-bigger;
+    }
+  }
+}
+
+/*-----------------------
+Secure Nav
+-----------------------*/
+.nav-block.secure-block{
+  @include rem(margin, 5px 0px 0px);
+  padding: 0px;
+
+  @include media($tablet){
+   @include rem(margin, 12px 0px 0px);
+  }
+
+  .lock{
+    display: inline-block;
+    @include rem(margin-right, 5px);
+    opacity: 0.5;
+    width: 15px;
+    vertical-align: sub;
+  }
+
+  h5{
+    color: $grey-base;
+    display: inline-block;
+    @include s-tiny;
+  }
+}
+
+/*-----------------------
+Primary Nav
+-----------------------*/
+.navigation{
+  border-bottom: 1px solid $white-med;
+  @include position(absolute, 0px 0px null 0px);
+  @include transition(all 0.3s ease-in-out);
+  width: 100%;
+  z-index: 9;
+
+  .callout-block{
+    text-align: right;
+
+    p{
+      display: inline-block;
+      @include s-small;
+      margin-bottom: 0px;
+      vertical-align: 5px;
+      width: inherit;
+    }
+
+    h5{
+      color: $grey-base;
+      @include rem(margin-top, 3px);
+    }
+  }
+}
+
+.nav-block{
+  @include media($tablet){
+    display: inline-block;
+    @include rem(margin-right, 20px);
+    @include rem(padding-right, 20px);
+  }
+}
+
+.side-panel{
+  display: none;
+
+  @include media($tablet){
+    display: inline-block;
+  }
+}
+
+.finish-later{
+  display: none;
+}
+
+.arrow{
+  display: inline-block;
+  width: 24px;
+  margin-right: -27px;
+}
+
+.sliding-panel-button{
+  vertical-align: super;
+}
+
+/*-----------------------
+Login Portal
+-----------------------*/
+
+.login-portal{
+  height: 60px;
+
+  @include media($tablet){
+    height: 90px;
+  }
+
+  img{
+    @include rem(margin-top, 5px);
+    width: 120px;
+
+    @include media($tablet){
+      @include rem(margin-top, 0px);
+      width: 200px;
+    }
+  }
+
+  h1{
+    margin: 0px;
+  }
+}

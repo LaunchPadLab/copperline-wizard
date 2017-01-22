@@ -1,0 +1,13 @@
+#msform .error{
+  input{
+    border-color: $red-base;
+  }
+
+  span{
+    color: $red-base;
+    display: block;
+    @include rem(margin, -5px 0px 10px);
+    @include s-tiny;
+    width: 100%;
+  }
+}
