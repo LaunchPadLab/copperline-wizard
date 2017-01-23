@@ -1,6 +1,7 @@
 $("document").ready(function() {
   $(".slider").rangeslider();
 });
+
 $.fn.rangeslider = function(options) {
   var obj = this;
   var defautValue = obj.attr("value");
