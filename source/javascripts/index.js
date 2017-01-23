@@ -1,3 +1,2 @@
 //= require_tree ./lib
-//= require subtle-slide
-//= require panel
+//= require_tree ./site
