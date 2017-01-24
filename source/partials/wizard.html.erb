@@ -37,9 +37,8 @@ title: Verification Wizard
           </div>
         </h3>
         <div class="inputs half-input">
-          <field class="error">
+          <field>
             <input type="tel" name="cardNumber" placeholder="1111-1111-1111-1111">
-            <span>Card doesn't exist</span>
           </field>
         </div>
           <input type="button" name="next" class="next action-button add-break" value="Next" />
@@ -52,7 +51,7 @@ title: Verification Wizard
       <fieldset>
         <h3>Company Name:</h3>
         <field>
-          <input type="text" placeholder="" />
+          <input type="text" name="companyName" placeholder="" />
         </field>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
@@ -74,6 +73,7 @@ title: Verification Wizard
             <input type="tel" name="phone" placeholder="(111)-111-1111"/>
           </field>
         </div>
+        <span class="error-message"></span>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
@@ -183,7 +183,9 @@ title: Verification Wizard
         </h3>
         <label>Home Address</label>
         <div class="inputs full-input">
-          <input type="text" name="street" placeholder="Street" />
+          <field>
+            <input type="text" name="street" placeholder="Street" />
+          </field>
         </div>
         <div class="inputs third-input">
           <field>

@@ -1,9 +1,14 @@
+// VForms is defined in validated-forms.js
+
 var constraints = {
   cardNumber: {
     presence: true,
     length: { is: 16 }
   },
-  phoneNumber: {
+  companyName: {
+    presence: true
+  },
+  phone: {
     presence: true,
     length: { is: 10 }
   },
@@ -14,10 +19,16 @@ var constraints = {
   fullName: {
     presence: true
   },
+  title: {
+    presence: true
+  },
   street: {
     presence: true
   },
   city: {
+    presence: true
+  },
+  state: {
     presence: true
   },
   start: {
@@ -61,26 +72,17 @@ var constraints = {
 
 var masks = {
   cardNumber: '0000-0000-0000-0000',
-  phoneNumber: '(000) 000-0000',
-  SSN: '000 00 0000'
+  phone: '(000) 000-0000',
+  SSN: '000 00 0000',
+  zipCode: '00000',
+  yearFounded: '0000'
 }
 
-function applyValidations (property) {
-  var selector = '[name="' + property +'"]'
-  var mask = masks[property]
-  if (mask) $(selector).mask(mask)
-  $(selector).change(function () {
-    var user = {} // Default to empty user for now
-    var value = mask ? $(this).cleanVal() : $(this).val() // Unmask value if necessary
-    user[property] = value
-    var errors = validate(user, constraints)
-    if (errors && errors[property]) console.log(errors[property][0])
+$(document).ready(function () {
+  // Intitialize VForms with validation constraints and masks
+  var formCreator = new VForms(constraints, masks)
+  // Add validations to each fieldset
+  var forms = $('fieldset').toArray().map(function (fieldset) {
+    return new formCreator.Form(fieldset)
   })
-}
-
-var propertiesToValidate = Object.keys(constraints)
-
-propertiesToValidate.forEach(applyValidations)
-
-
-
+})
