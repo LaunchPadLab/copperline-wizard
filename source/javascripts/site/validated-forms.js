@@ -33,10 +33,10 @@ var VForms = function (contraints, masks) {
 
     // Validation function - returns null (no error) or error message
     this.validate = function () {
-      var user = {} // Default to empty user for now
+      var toValidate = {} // Object that will be validated
       var value = this.mask ? this.input.cleanVal() : this.input.val() // Unmask value if necessary
-      user[this.property] = value
-      var errors = validate(user, constraints)
+      toValidate[this.property] = value
+      var errors = validate(toValidate, constraints)
       var message = (errors && errors[this.property]) ? errors[this.property][0] : null
       this.setErrorState(message)
       return message
