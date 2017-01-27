@@ -73,7 +73,7 @@ var VForms = function (constraints, masks) {
     })
 
     // If there are fields, deactivate button until validations are passed
-    if (this.fields.length) this.nextButton.addClass('disabled inactive-button')
+    if (this.fields.length) this.nextButton.addClass('disabled')
 
     // Validation function - validates all fields
     this.validate = function () {
@@ -85,7 +85,7 @@ var VForms = function (constraints, masks) {
 
     // Update UI for errors
     this.setErrorState = function (messages) {
-      this.nextButton.toggleClass('disabled inactive-button', messages.length > 0)
+      this.nextButton.toggleClass('disabled', messages.length > 0)
     }
   }
 
