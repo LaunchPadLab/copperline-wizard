@@ -102,7 +102,7 @@
 }( jQuery ));
 
 //init
-$(document).ready(function(){
+$(document).on('isReady', function(){
   $('.fileUploader').uploader({
     MessageAreaText: "Upload 3 banks statements"
   });

@@ -37,13 +37,12 @@ title: Verification Wizard
           </div>
         </h3>
         <div class="inputs half-input">
-          <field class="error">
-            <input type="tel" name="" placeholder="1111–1111–1111–1111">
-            <span>Card doesn't exist</span>
+          <field>
+            <input type="tel" name="cardNumber" placeholder="1111-1111-1111-1111">
           </field>
         </div>
           <input type="button" name="next" class="next action-button add-break" value="Next" />
-      </fieldset><!--
+      </fieldset>
       <fieldset>
         <h3>You’re from ABC Technology Company, LLC, is that correct?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
@@ -52,7 +51,7 @@ title: Verification Wizard
       <fieldset>
         <h3>Company Name:</h3>
         <field>
-          <input type="text" placeholder="" />
+          <input type="text" name="companyName" placeholder="" />
         </field>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
@@ -60,20 +59,21 @@ title: Verification Wizard
         <h3>Who is this?</h3>
         <div class="inputs half-input">
           <field>
-            <input type="text" placeholder="Full Name" />
+            <input type="text" name="fullName" placeholder="Full Name" />
           </field>
           <field>
-            <input type="text" placeholder="Title" />
+            <input type="text" name="title" placeholder="Title" />
           </field>
         </div>
         <div class="inputs half-input">
           <field>
-            <input type="email" placeholder="name@example.com" />
+            <input type="email" name="email" placeholder="name@example.com"/>
           </field>
           <field>
-            <input type="tel" placeholder="(111)-111-1111" />
+            <input type="tel" name="phone" placeholder="(111)-111-1111"/>
           </field>
         </div>
+        <span class="error-message"></span>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
@@ -96,7 +96,7 @@ title: Verification Wizard
       <fieldset>
         <h3>Your Name:</h3>
         <field>
-          <input type="text" placeholder="" />
+          <input type="text" name="fullName" placeholder="" />
         </field>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
@@ -104,10 +104,10 @@ title: Verification Wizard
         <h3>Michael, enter your e-mail address and your phone number: </h3>
         <div class="inputs half-input">
           <field>
-            <input type="email" placeholder="name@example.com" />
+            <input type="email" placeholder="name@example.com" name="email"/>
           </field>
           <field>
-            <input type="tel" placeholder="(111)-111-1111" />
+            <input type="tel" placeholder="(111)-111-1111" name="phone"/>
           </field>
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
@@ -170,7 +170,7 @@ title: Verification Wizard
         <p>This will not affect your FICO credit score and there will be no inquiry on your credit report.  View <a href="#" target="_blank">terms and conditions</a>.</p>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
-      </fieldset>-->
+      </fieldset>
       <fieldset>
         <h3>
           Michael, enter your home address and date of birth so we can verify this information with the Experian credit report.
@@ -183,23 +183,25 @@ title: Verification Wizard
         </h3>
         <label>Home Address</label>
         <div class="inputs full-input">
-          <input type="text" placeholder="Street" />
+          <field>
+            <input type="text" name="street" placeholder="Street" />
+          </field>
         </div>
         <div class="inputs third-input">
           <field>
-            <input type="text" placeholder="City" />
+            <input type="text" name="city" placeholder="City" />
           </field>
           <field>
-            <input type="text" placeholder="State" />
+            <input type="text" name="state" placeholder="State" />
           </field>
           <field>
-            <input type="tel" placeholder="Zip Code" />
+            <input type="tel" name="zipCode" placeholder="Zip Code" />
           </field>
         </div>
         <label>Date of Birth</label>
         <div class="inputs half-input">
           <field>
-            <input type="text" placeholder="MM/DD/YYYY" />
+            <input type="date" name="birthDate"/>
           </field>
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
@@ -213,7 +215,7 @@ title: Verification Wizard
         <h3>Year Founded:</h3>
         <div class="inputs half-input">
           <field>
-            <input type="text" placeholder="" />
+            <input type="tel" name="yearFounded" placeholder="" />
           </field>
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
@@ -227,7 +229,7 @@ title: Verification Wizard
         <h3>Number of Employees:</h3>
         <div class="inputs half-input">
           <field>
-            <input type="text" placeholder="" />
+            <input type="number" name="numberOfEmployees" min="1"/>
           </field>
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
@@ -236,7 +238,7 @@ title: Verification Wizard
         <h3>We were unable to verify with your address. We will need to verify with your social security number.</h3>
         <div class="inputs half-input">
           <field>
-            <input type="tel" placeholder="XXX XX XXXX" />
+            <input type="tel" name="SSN" placeholder="XXX XX XXXX" />
           </field>
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
@@ -250,7 +252,7 @@ title: Verification Wizard
         <h3>Annual Revenue:</h3>
         <div class="inputs half-input">
           <field class="currency-symbol">
-            <input type="tel" placeholder="" />
+            <input type="tel" name="annualRevenue" placeholder="" />
           </field>
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
@@ -287,7 +289,7 @@ title: Verification Wizard
         <h3>Personal income of Jan from ABC Technology Company and other sources:</h3>
         <div class="inputs half-input">
           <field class="currency-symbol">
-            <input type="tel" placeholder="" />
+            <input type="tel" name="personalIncome" placeholder="" />
           </field>
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />

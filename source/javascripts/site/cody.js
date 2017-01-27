@@ -1,7 +1,8 @@
-jQuery(document).ready(function(event){
-  var isAnimating = false,
-    newLocation = '';
-    firstLoad = false;
+var isAnimating = false,
+  newLocation = '';
+  firstLoad = false;
+
+$(document).on('isReady', function(event){
 
   //trigger smooth transition from the actual page to the new one
   $('main').on('click', '[data-type="page-transition"]', function(event){
@@ -65,6 +66,9 @@ jQuery(document).ready(function(event){
         });
 
         if( !transitionsSupported() ) isAnimating = false;
+
+        // Notify DOM change
+        $(document).trigger('isReady')
       }, delay);
 
       if(url!=window.location && bool){
