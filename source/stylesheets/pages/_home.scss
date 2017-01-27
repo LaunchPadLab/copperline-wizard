@@ -75,7 +75,10 @@ Form Animation
   }
 
   &.disabled{
-    pointer-events: none;
+    background-color: $grey-light;
+    &:hover{
+      background-color: $grey-light;
+    }
   }
 
   &:hover{

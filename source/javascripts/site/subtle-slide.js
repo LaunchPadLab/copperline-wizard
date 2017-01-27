@@ -5,7 +5,7 @@ $(document).on('isReady', function() {
   var animating; //flag to prevent quick multi-click glitches
 
   $(".next").click(function(){
-    if(animating) return false;
+    if(animating || $(this).hasClass('disabled')) return false;
     animating = true;
 
     current_fs = $(this).parent();
