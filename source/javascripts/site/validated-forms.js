@@ -4,7 +4,7 @@
 // Utility function to check existence
 function exists (prop) { return prop }
 
-var VForms = function (contraints, masks) {
+var VForms = function (constraints, masks) {
 
   var elements = {}
 

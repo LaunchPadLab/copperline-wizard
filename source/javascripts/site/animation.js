@@ -1,3 +1,4 @@
+// Don't use 'isReady' event since we only want this run once
 $(document).ready(function() {
   $(".animsition").animsition({
     inClass: 'flip-in-x-fr',

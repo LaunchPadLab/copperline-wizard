@@ -78,7 +78,7 @@ var masks = {
   yearFounded: '0000'
 }
 
-$(document).ready(function () {
+$(document).on('isReady', function () {
   // Intitialize VForms with validation constraints and masks
   var formCreator = new VForms(constraints, masks)
   // Add validations to each fieldset
