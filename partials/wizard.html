@@ -73,18 +73,18 @@
         <h3>Who is this?</h3>
         <div class="inputs half-input">
           <field>
-            <input type="text" name="fullName" placeholder="Full Name" />
+            <label>First Name</label>
+            <input type="text" name="firstName" />
           </field>
           <field>
-            <input type="text" name="title" placeholder="Title" />
+            <label>Last Name</label>
+            <input type="text" name="lastName" />
           </field>
         </div>
-        <div class="inputs half-input">
+        <div class="inputs">
           <field>
-            <input type="email" name="email" placeholder="name@example.com"/>
-          </field>
-          <field>
-            <input type="tel" name="phone" placeholder="(111)-111-1111"/>
+            <label>Title</label>
+            <input type="text" name="title" />
           </field>
         </div>
         <span class="error-message"></span>
@@ -109,18 +109,33 @@
       </fieldset>
       <fieldset>
         <h3>Your Name:</h3>
-        <field>
-          <input type="text" name="fullName" placeholder="" />
-        </field>
+        <div class="inputs half-input">
+          <field>
+            <label>First Name</label>
+            <input type="text" name="firstName" />
+          </field>
+          <field>
+            <label>Last Name</label>
+            <input type="text" name="lastName" />
+          </field>
+        </div>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
         <h3>Michael, enter your e-mail address and your phone number: </h3>
-        <div class="inputs half-input">
+        <div class="inputs full-input">
           <field>
+            <label>Email</label>
             <input type="email" placeholder="name@example.com" name="email"/>
           </field>
+        </div>
+        <div class="inputs half-input">
           <field>
+            <label>Work Phone</label>
+            <input type="tel" placeholder="(111)-111-1111" name="phone"/>
+          </field>
+          <field>
+            <label>Mobile Phone</label>
             <input type="tel" placeholder="(111)-111-1111" name="phone"/>
           </field>
         </div>
@@ -142,33 +157,53 @@
       <fieldset>
         <h3>Owner(s) of ABC Technology:</h3>
         <div class="percentage">
-          <h5>Full Name</h5>
-          <h5>% Ownership</h5>
-        </div>
-        <div class="percentage">
-          <field class="full-name">
-            <input type="text" placeholder="" />
-          </field>
+          <div class="name-block">
+            <field class="first-name">
+              <label>First Name</label>
+              <input type="text" placeholder="" />
+            </field>
+            <field class="first-name">
+              <label>Last Name</label>
+              <input type="text" placeholder="" />
+            </field>
+          </div>
           <field class="percent-symbol">
-            <input type="text" placeholder="" />
+            <label>% Ownership</label>
+            <input type="tel" placeholder="" />
           </field>
         </div>
-        <div class="percentage">
-          <field class="full-name">
-            <input type="text" placeholder="" />
-          </field>
-          <field class="percent-symbol">
-            <input type="text" placeholder="" />
-          </field>
-        </div>
-        <div class="percentage">
-          <field class="full-name">
-            <input type="text" placeholder="" />
-          </field>
-          <field class="percent-symbol">
-            <input type="text" placeholder="" />
-          </field>
-        </div>
+       <div class="percentage">
+         <div class="name-block">
+           <field class="first-name">
+             <label>First Name</label>
+             <input type="text" placeholder="" />
+           </field>
+           <field class="first-name">
+             <label>Last Name</label>
+             <input type="text" placeholder="" />
+           </field>
+         </div>
+         <field class="percent-symbol">
+           <label>% Ownership</label>
+           <input type="tel" placeholder="" />
+         </field>
+       </div>
+       <div class="percentage">
+         <div class="name-block">
+           <field class="first-name">
+             <label>First Name</label>
+             <input type="text" placeholder="" />
+           </field>
+           <field class="first-name">
+             <label>Last Name</label>
+             <input type="text" placeholder="" />
+           </field>
+         </div>
+         <field class="percent-symbol">
+           <label>% Ownership</label>
+           <input type="tel" placeholder="" />
+         </field>
+       </div>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
@@ -200,6 +235,9 @@
           <field>
             <input type="text" name="street" placeholder="Street" />
           </field>
+          <field>
+            <input type="text" name="suite" placeholder="Suite" />
+          </field>
         </div>
         <div class="inputs third-input">
           <field>
@@ -226,10 +264,10 @@
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
       <fieldset>
-        <h3>Year Founded:</h3>
+        <h3>Year Founded (under current owners):</h3>
         <div class="inputs half-input">
           <field>
-            <input type="tel" name="yearFounded" placeholder="" />
+            <input type="tel" name="yearFounded" placeholder=""/>
           </field>
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
@@ -263,7 +301,15 @@
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
       <fieldset>
-        <h3>Annual Revenue:</h3>
+        <h3>Annual Revenue:
+          <div class="tooltip-item">
+            ?
+            <div class="tooltip tooltip-image">
+              <img src="images/cc.png">
+              <p>Take you current monthly bank average and multiply by 12.</p>
+            </div>
+          </div>
+        </h3>
         <div class="inputs half-input">
           <field class="currency-symbol">
             <input type="tel" name="annualRevenue" placeholder="" />
@@ -281,7 +327,17 @@
             </div>
           </div>
         </h3>
-        <input class="slider" value="0" min="-80000" max="80000" name="rangeslider" type="range" step="10000"/>
+        <span class="range-slider">
+          <input class="slider" value="0" min="-80000" max="80000" name="rangeslider" type="range" step="10000" oninput="updateSlider(this)">
+          <span class="slider-container">
+            <span class="bar">
+              <span style="width: 50%;"></span>
+            </span>
+            <span class="bar-btn" style="left: 50%;">
+              <span class="bar-value">0</span>
+            </span>
+          </span>
+        </span>
         <ul class="three-range">
           <li>- $80,000</li>
           <li>$0</li>

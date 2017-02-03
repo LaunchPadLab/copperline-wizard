@@ -1028,12 +1028,15 @@ label {
 
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
 select,
-textarea {
+textarea, input[type="date"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
+  font-family: "Avenir", sans-serif;
+  font-style: normal;
+  font-weight: normal;
   border: 1px solid #DEDEDE;
   border-radius: 3px;
   box-sizing: border-box;
@@ -1046,23 +1049,23 @@ textarea {
   line-height: 2.3rem; }
   input[type="color"]::-webkit-input-placeholder, input[type="date"]::-webkit-input-placeholder, input[type="datetime"]::-webkit-input-placeholder, input[type="datetime-local"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="month"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder, input[type="text"]::-webkit-input-placeholder, input[type="time"]::-webkit-input-placeholder, input[type="url"]::-webkit-input-placeholder, input[type="week"]::-webkit-input-placeholder, input:not([type])::-webkit-input-placeholder, textarea::-webkit-input-placeholder,
   select::-webkit-input-placeholder,
-  textarea::-webkit-input-placeholder {
+  textarea::-webkit-input-placeholder, input[type="date"]::-webkit-input-placeholder {
     color: #DEDEDE; }
   input[type="color"]::-moz-placeholder, input[type="date"]::-moz-placeholder, input[type="datetime"]::-moz-placeholder, input[type="datetime-local"]::-moz-placeholder, input[type="email"]::-moz-placeholder, input[type="month"]::-moz-placeholder, input[type="number"]::-moz-placeholder, input[type="password"]::-moz-placeholder, input[type="search"]::-moz-placeholder, input[type="tel"]::-moz-placeholder, input[type="text"]::-moz-placeholder, input[type="time"]::-moz-placeholder, input[type="url"]::-moz-placeholder, input[type="week"]::-moz-placeholder, input:not([type])::-moz-placeholder, textarea::-moz-placeholder,
   select::-moz-placeholder,
-  textarea::-moz-placeholder {
+  textarea::-moz-placeholder, input[type="date"]::-moz-placeholder {
     color: #DEDEDE; }
   input[type="color"]:-moz-placeholder, input[type="date"]:-moz-placeholder, input[type="datetime"]:-moz-placeholder, input[type="datetime-local"]:-moz-placeholder, input[type="email"]:-moz-placeholder, input[type="month"]:-moz-placeholder, input[type="number"]:-moz-placeholder, input[type="password"]:-moz-placeholder, input[type="search"]:-moz-placeholder, input[type="tel"]:-moz-placeholder, input[type="text"]:-moz-placeholder, input[type="time"]:-moz-placeholder, input[type="url"]:-moz-placeholder, input[type="week"]:-moz-placeholder, input:not([type]):-moz-placeholder, textarea:-moz-placeholder,
   select:-moz-placeholder,
-  textarea:-moz-placeholder {
+  textarea:-moz-placeholder, input[type="date"]:-moz-placeholder {
     color: #DEDEDE; }
   input[type="color"]:-ms-input-placeholder, input[type="date"]:-ms-input-placeholder, input[type="datetime"]:-ms-input-placeholder, input[type="datetime-local"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, input[type="month"]:-ms-input-placeholder, input[type="number"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="search"]:-ms-input-placeholder, input[type="tel"]:-ms-input-placeholder, input[type="text"]:-ms-input-placeholder, input[type="time"]:-ms-input-placeholder, input[type="url"]:-ms-input-placeholder, input[type="week"]:-ms-input-placeholder, input:not([type]):-ms-input-placeholder, textarea:-ms-input-placeholder,
   select:-ms-input-placeholder,
-  textarea:-ms-input-placeholder {
+  textarea:-ms-input-placeholder, input[type="date"]:-ms-input-placeholder {
     color: #DEDEDE; }
   input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
   select:focus,
-  textarea:focus {
+  textarea:focus, input[type="date"]:focus {
     border-color: #042F49;
     outline: none; }
 
@@ -1256,28 +1259,38 @@ Percentage
 .percentage {
   display: inline-block;
   width: 100%; }
-  .percentage h5:first-child {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 65.88078%; }
-    .percentage h5:first-child:last-child {
-      margin-right: 0; }
-  .percentage h5:nth-child(2) {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%; }
-    .percentage h5:nth-child(2):last-child {
-      margin-right: 0; }
+  .percentage:not(:first-of-type) label {
+    display: block; }
+    @media screen and (min-width: 45em) {
+      .percentage:not(:first-of-type) label {
+        display: none; } }
+  .percentage:not(:last-of-type) {
+    border-bottom: 1px solid #C3C2C2;
+    margin-bottom: 20px;
+    margin-bottom: 1.42857rem;
+    padding-bottom: 20px;
+    padding-bottom: 1.42857rem; }
+    @media screen and (min-width: 45em) {
+      .percentage:not(:last-of-type) {
+        border-bottom: none;
+        margin-bottom: 0px;
+        padding-bottom: 0px; } }
+  @media screen and (min-width: 45em) {
+    .percentage .name-block {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 82.94039%; }
+      .percentage .name-block:last-child {
+        margin-right: 0; } }
 
-.full-name {
+.first-name, .last-name {
   display: inline-block;
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 65.88078%; }
-  .full-name:last-child {
+  width: 48.82117%; }
+  .first-name:last-child, .last-name:last-child {
     margin-right: 0; }
 
 #msform .percent-symbol {
@@ -1285,17 +1298,25 @@ Percentage
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 31.76157%; }
+  width: 48.82117%; }
   #msform .percent-symbol:last-child {
     margin-right: 0; }
+  @media screen and (min-width: 45em) {
+    #msform .percent-symbol {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 14.70196%; }
+      #msform .percent-symbol:last-child {
+        margin-right: 0; } }
   #msform .percent-symbol input {
     padding-right: 30px;
     padding-right: 2.14286rem; }
   #msform .percent-symbol:after {
     content: "%";
     position: absolute;
-    top: 7px;
     right: 12px;
+    bottom: 15px;
     font-size: 18px;
     font-size: 1.28571rem;
     line-height: 32.2px;
