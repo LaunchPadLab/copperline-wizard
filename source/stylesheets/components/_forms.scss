@@ -14,8 +14,9 @@ label{
 // Inputs
 #{$all-text-inputs},
 select,
-textarea{
+textarea , input[type="date"]{
   @include appearance(none);
+  @include font-type($primary-sans-serif, normal, normal);
   border: 1px solid $white-med;
   border-radius: 3px;
   box-sizing: border-box;
@@ -234,25 +235,47 @@ Percentage
   display: inline-block;
   width: 100%;
 
-  h5{
-    &:first-child{
-      @include span-columns(8 of 12);
-    }
+  &:not(:first-of-type){
+    label{
+      display: block;
 
-    &:nth-child(2){
-      @include span-columns(4 of 12);
+      @include media($tablet){
+        display: none;
+      }
+    }
+  }
+
+  &:not(:last-of-type){
+    border-bottom: 1px solid $grey-light;
+    @include rem(margin-bottom, 20px);
+    @include rem(padding-bottom, 20px);
+
+    @include media($tablet){
+      border-bottom: none;
+      @include rem(margin-bottom, 0px);
+      @include rem(padding-bottom, 0px);
+    }
+  }
+
+  .name-block{
+    @include media($tablet){
+      @include span-columns(10 of 12);
     }
   }
 }
 
-.full-name{
+.first-name, .last-name{
   display: inline-block;
-  @include span-columns(8 of 12);
+  @include span-columns(6 of 12);
 }
 
 #msform .percent-symbol{
   position: relative;
-  @include span-columns(4 of 12);
+  @include span-columns(6 of 12);
+
+  @include media($tablet){
+    @include span-columns(2 of 12);
+  }
 
   input{
     @include rem(padding-right, 30px);
@@ -260,7 +283,7 @@ Percentage
 
   &:after{
     content: "%";
-    @include position(absolute, 7px 12px null null);
+    @include position(absolute, null 12px 15px null);
     @include s-big;
   }
 }

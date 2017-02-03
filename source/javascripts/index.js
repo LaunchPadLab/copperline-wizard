@@ -8,7 +8,7 @@
 //= require ./site/subtle-slide
 //= require ./site/uploader
 
-// vv Order matters for these 
+// vv Order matters for these
 
 //= require ./site/validated-forms
 //= require ./site/validations
