@@ -43,7 +43,13 @@ var constraints = {
   },
   yearFounded: {
     presence: true,
-    length: { is: 4 }
+    length: { is: 4 },
+    numericality: {
+      onlyInteger: true,
+      // Allow 1800 - present year
+      greaterThanOrEqualTo: 1600,
+      lessThanOrEqualTo: new Date().getFullYear()
+    }
   },
   numberOfEmployees: {
     presence: true,
