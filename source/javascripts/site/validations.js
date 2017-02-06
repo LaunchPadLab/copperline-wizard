@@ -47,7 +47,7 @@ var constraints = {
     numericality: {
       onlyInteger: true,
       // Allow 1800 - present year
-      greaterThanOrEqualTo: 1800,
+      greaterThanOrEqualTo: 1600,
       lessThanOrEqualTo: new Date().getFullYear()
     }
   },
