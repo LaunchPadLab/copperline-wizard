@@ -44,7 +44,7 @@ title: Verification Wizard
           <input type="button" name="next" class="next action-button add-break" value="Next" />
       </fieldset>
       <fieldset>
-        <h3>You’re from ABC Technology Company, LLC, is that correct?</h3>
+        <h3>You’re from <span>ABC Technology Company, LLC</span>, is that correct?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
@@ -77,19 +77,19 @@ title: Verification Wizard
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
-        <h3>Is Michael Jones still the President of ABC Technology company?</h3>
+        <h3>Is <span>Michael Jones</span> still the President of <span>ABC Technology company</span>?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
       <fieldset>
-        <h3>President of ABC Technology Company:</h3>
+        <h3>President of <span>ABC Technology Company</span>:</h3>
         <field>
           <input type="text" placeholder="" />
         </field>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
-        <h3>Are you Michael Jones?</h3>
+        <h3>Are you <span>Michael Jones</span>?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
@@ -108,7 +108,7 @@ title: Verification Wizard
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
-        <h3>Michael, enter your e-mail address and your phone number: </h3>
+        <h3><span>Michael</span>, enter your e-mail address and your phone number: </h3>
         <div class="inputs full-input">
           <field>
             <label>Email</label>
@@ -129,7 +129,7 @@ title: Verification Wizard
       </fieldset>
       <fieldset>
         <h3>
-          Michael, are you the 100% owner of ABC Technology?
+          <span>Michael</span>, are you the 100% owner of <span>ABC Technology</span>?
           <div class="tooltip-item">
             ?
             <div class="tooltip">
@@ -141,7 +141,7 @@ title: Verification Wizard
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
       <fieldset>
-        <h3>Owner(s) of ABC Technology:</h3>
+        <h3>Owner(s) of <span>ABC Technology</span>:</h3>
         <div class="percentage">
           <div class="name-block">
             <field class="first-name">
@@ -194,7 +194,7 @@ title: Verification Wizard
       </fieldset>
       <fieldset>
         <h3>
-          Michael, for your protection, we need to verify your identity through Experian, is this ok?
+          <span>Michael</span>, for your protection, we need to verify your identity through Experian, is this ok?
           <div class="tooltip-item">
             ?
             <div class="tooltip">
@@ -208,7 +208,7 @@ title: Verification Wizard
       </fieldset>
       <fieldset>
         <h3>
-          Michael, enter your home address and date of birth so we can verify this information with the Experian credit report.
+          <span>Michael</span>, enter your home address and date of birth so we can verify this information with the Experian credit report.
           <div class="tooltip-item">
             ?
             <div class="tooltip">
@@ -245,7 +245,7 @@ title: Verification Wizard
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
-        <h3>Your company was founded in 2006, is that correct?</h3>
+        <h3>Your company was founded in <span>2006</span>, is that correct?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
@@ -259,7 +259,7 @@ title: Verification Wizard
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
-        <h3>And you have 7 employees, is that correct?</h3>
+        <h3>And you have <span>7</span> employees, is that correct?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
@@ -282,7 +282,7 @@ title: Verification Wizard
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
-        <h3>Your annual revenues are about $310,000 is that correct?</h3>
+        <h3>Your annual revenues are about <span>$310,000</span> is that correct?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
@@ -325,9 +325,9 @@ title: Verification Wizard
           </span>
         </span>
         <ul class="three-range">
-          <li>- $80,000</li>
+          <li>- $<span>80,000</span></li>
           <li>$0</li>
-          <li>$80,000</li>
+          <li>$<span>80,000</span></li>
         </ul>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
@@ -342,7 +342,35 @@ title: Verification Wizard
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
       <fieldset>
-        <h3>Personal income of Jan from ABC Technology Company and other sources:</h3>
+        <h3>Is <span>29</span> your Federal Tax ID (EIN)?</h3>
+        <input type="button" name="next" class="next action-button" value="Yes" />
+        <input type="button" name="next" class="next action-button inactive-button" value="No" />
+      </fieldset>
+      <fieldset>
+        <h3>Federal Tax ID (EIN):</h3>
+        <div class="inputs half-input">
+          <field>
+            <input type="tel" name="ein" placeholder=""/>
+          </field>
+        </div>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h3>Are you an <span>LLC</span> corporation type?</h3>
+        <input type="button" name="next" class="next action-button" value="Yes" />
+        <input type="button" name="next" class="next action-button inactive-button" value="No" />
+      </fieldset>
+      <fieldset>
+        <h3>Corporation Type:</h3>
+        <div class="inputs half-input">
+          <field>
+            <input type="text" name="corporationType" placeholder=""/>
+          </field>
+        </div>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset>
+        <h3>Personal income of <span>Jan</span> from <span>ABC Technology Company</span> and other sources:</h3>
         <div class="inputs half-input">
           <field class="currency-symbol">
             <input type="tel" name="personalIncome" placeholder="" />
@@ -350,6 +378,11 @@ title: Verification Wizard
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
         <a href="" class="skip-button">Skip and come back later</a>
+      </fieldset>
+      <fieldset>
+        <h5>Sorry, but looks like you don’t qualify.</h5>
+        <h3>We have some helpful tips on improving your credit and becoming eligible for one of our plans.</h3>
+        <a href="#" class="next action-button">Learn More</a>
       </fieldset>
       <fieldset>
         <h5>You're All Set!</h5>

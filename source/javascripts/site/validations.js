@@ -68,6 +68,15 @@ var constraints = {
       greaterThanOrEqualTo: 0
     }
   },
+  ein: {
+    presence: true,
+    numericality: {
+      greaterThanOrEqualTo: 0
+    }
+  },
+  corporationType: {
+    presence: true
+  },
   personalIncome: {
     presence: true,
     numericality: {

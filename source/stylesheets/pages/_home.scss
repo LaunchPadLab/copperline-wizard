@@ -85,6 +85,10 @@ Form Animation
     background-color: darken($orange-base, 8%);
   }
 }
+a.action-button{
+  text-align: center;
+  text-decoration: none;
+}
 
 /*-----------------------
 Progress Bar
@@ -146,7 +150,7 @@ fieldset{
     @include rem(margin-bottom, 8px);
   }
 
-  h3 span{
+  h3 .error-message{
     @include s-small;
   }
 }
