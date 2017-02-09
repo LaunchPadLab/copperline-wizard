@@ -3398,6 +3398,10 @@ Form Animation
   #msform .action-button:hover {
     background-color: #e26d0a; }
 
+a.action-button {
+  text-align: center;
+  text-decoration: none; }
+
 /*-----------------------
 Progress Bar
 -----------------------*/
@@ -3453,7 +3457,7 @@ fieldset h5 {
   color: #9B9B9B;
   margin-bottom: 8px;
   margin-bottom: 0.57143rem; }
-fieldset h3 span {
+fieldset h3 .error-message {
   font-size: 12px;
   font-size: 0.85714rem; }
 
