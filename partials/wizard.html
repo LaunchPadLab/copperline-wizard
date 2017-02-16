@@ -35,7 +35,7 @@
         <li></li>
         <li></li>
       </ul>
-      <fieldset>
+      <fieldset id="activation-number">
         <!--
         <h5>Welcome back, let’s verify your current information!</h5>
         <h5>Welcome back, let’s re-verify your info.</h5>
@@ -57,19 +57,19 @@
         </div>
           <input type="button" name="next" class="next action-button add-break" value="Next" />
       </fieldset>
-      <fieldset>
+      <fieldset id="confirm-company">
         <h3>You’re from <span>ABC Technology Company, LLC</span>, is that correct?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
-      <fieldset>
+      <fieldset id="edit-company">
         <h3>Company Name:</h3>
         <field>
           <input type="text" name="companyName" placeholder="" />
         </field>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
-      <fieldset>
+      <fieldset id="name">
         <h3>Who is this?</h3>
         <div class="inputs half-input">
           <field>
@@ -90,24 +90,24 @@
         <span class="error-message"></span>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
-      <fieldset>
+      <fieldset id="confirm-president">
         <h3>Is <span>Michael Jones</span> still the President of <span>ABC Technology company</span>?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
-      <fieldset>
+      <fieldset id="edit-president">
         <h3>President of <span>ABC Technology Company</span>:</h3>
         <field>
           <input type="text" placeholder="" />
         </field>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
-      <fieldset>
+      <fieldset id="confirm-name">
         <h3>Are you <span>Michael Jones</span>?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
-      <fieldset>
+      <fieldset id="edit-name">
         <h3>Your Name:</h3>
         <div class="inputs half-input">
           <field>
@@ -121,7 +121,7 @@
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
-      <fieldset>
+      <fieldset id="contact-info">
         <h3><span>Michael</span>, enter your e-mail address and your phone number: </h3>
         <div class="inputs full-input">
           <field>
@@ -141,7 +141,7 @@
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
-      <fieldset>
+      <fieldset id="confirm-ownership">
         <h3>
           <span>Michael</span>, are you the 100% owner of <span>ABC Technology</span>?
           <div class="tooltip-item">
@@ -154,7 +154,7 @@
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
-      <fieldset>
+      <fieldset id="edit-ownership">
         <h3>Owner(s) of <span>ABC Technology</span>:</h3>
         <div class="percentage">
           <div class="name-block">
@@ -206,7 +206,7 @@
        </div>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
-      <fieldset>
+      <fieldset id="experian">
         <h3>
           <span>Michael</span>, for your protection, we need to verify your identity through Experian, is this ok?
           <div class="tooltip-item">
@@ -220,7 +220,7 @@
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
-      <fieldset>
+      <fieldset id="address">
         <h3>
           <span>Michael</span>, enter your home address and date of birth so we can verify this information with the Experian credit report.
           <div class="tooltip-item">
@@ -258,12 +258,12 @@
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
-      <fieldset>
+      <fieldset id="confirm-founded">
         <h3>Your company was founded in <span>2006</span>, is that correct?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
-      <fieldset>
+      <fieldset id="edit-founded">
         <h3>Year Founded (under current owners):</h3>
         <div class="inputs half-input">
           <field>
@@ -272,12 +272,12 @@
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
-      <fieldset>
+      <fieldset id="confirm-employees">
         <h3>And you have <span>7</span> employees, is that correct?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
-      <fieldset>
+      <fieldset id="edit-employees">
         <h3>Number of Employees:</h3>
         <div class="inputs half-input">
           <field>
@@ -286,7 +286,7 @@
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
-      <fieldset>
+      <fieldset id="address-unverified">
         <h3>We were unable to verify with your address. We will need to verify with your social security number.</h3>
         <div class="inputs half-input">
           <field>
@@ -295,12 +295,12 @@
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
-      <fieldset>
+      <fieldset id="confirm-revenue">
         <h3>Your annual revenues are about <span>$310,000</span> is that correct?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
-      <fieldset>
+      <fieldset id="annual-revenue">
         <h3>Annual Revenue:
           <div class="tooltip-item">
             ?
@@ -317,7 +317,7 @@
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
-      <fieldset>
+      <fieldset id="profit">
         <h3>
           What was your approximate profit last year?
           <div class="tooltip-item">
@@ -345,22 +345,22 @@
         </ul>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
-      <fieldset>
+      <fieldset id="annual-revenue">
         <h3>Is any part of this loan for equipment?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
-      <fieldset>
+      <fieldset id="loans">
         <h3>Are you going to use this loan to consolidate other loans?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
-      <fieldset>
+      <fieldset id="confirm-ein">
         <h3>Is <span>29</span> your Federal Tax ID (EIN)?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
-      <fieldset>
+      <fieldset id="edit-ein">
         <h3>Federal Tax ID (EIN):</h3>
         <div class="inputs half-input">
           <field>
@@ -369,12 +369,12 @@
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
-      <fieldset>
+      <fieldset id="confirm-corporation">
         <h3>Are you an <span>LLC</span> corporation type?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
       </fieldset>
-      <fieldset>
+      <fieldset id="edit-corporation">
         <h3>Corporation Type:</h3>
         <div class="inputs half-input">
           <field>
@@ -383,7 +383,7 @@
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
-      <fieldset>
+      <fieldset id="income">
         <h3>Personal income of <span>Jan</span> from <span>ABC Technology Company</span> and other sources:</h3>
         <div class="inputs half-input">
           <field class="currency-symbol">
@@ -393,12 +393,12 @@
         <input type="button" name="next" class="next action-button" value="Next" />
         <a href="" class="skip-button">Skip and come back later</a>
       </fieldset>
-      <fieldset>
+      <fieldset id="doesnt-qualify">
         <h5>Sorry, but looks like you don’t qualify.</h5>
         <h3>We have some helpful tips on improving your credit and becoming eligible for one of our plans.</h3>
         <a href="#" class="next action-button">Learn More</a>
       </fieldset>
-      <fieldset>
+      <fieldset id="complete">
         <h5>You're All Set!</h5>
         <h3>Your CopperLine Account Manager is going to be Sharon Boyer. Here’s Sharon’s contact information.</h3>
         <div class="contact-block">
