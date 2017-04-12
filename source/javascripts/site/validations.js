@@ -39,7 +39,8 @@ var constraints = {
     length: { is: 5 }
   },
   birthDate: {
-    presence: true
+    presence: true,
+    length: { is: 8 }
   },
   yearFounded: {
     presence: true,
@@ -77,6 +78,9 @@ var constraints = {
   corporationType: {
     presence: true
   },
+  corporationEdit: {
+
+  },
   personalIncome: {
     presence: true,
     numericality: {
@@ -90,7 +94,8 @@ var masks = {
   phone: '(000) 000-0000',
   SSN: '000 00 0000',
   zipCode: '00000',
-  yearFounded: '0000'
+  yearFounded: '0000',
+  birthDate: '00/00/0000'
 }
 
 $(document).on('isReady', function () {
