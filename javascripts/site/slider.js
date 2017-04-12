@@ -2,25 +2,28 @@ $("document").on('isReady', function() {
   $(".slider").rangeslider();
 });
 
-$.fn.rangeslider = function(options) {
-  var obj = this;
-  var defautValue = obj.attr("value");
-  obj.wrap("<span class='range-slider'></span>");
-  obj.after("<span class='slider-container'><span class='bar'><span></span></span><span class='bar-btn'><span class='bar-value'>$0</span></span></span>");
-  obj.attr("oninput", "updateSlider(this)");
-  updateSlider(this);
-  return obj;
-};
+var valueBubble = '<output class="rangeslider__value-bubble" />';
 
-function updateSlider(passObj) {
-  var obj = $(passObj);
-  var value = obj.val();
-  var min = obj.attr("min");
-  var max = obj.attr("max");
-  var range = Math.round(max - min);
-  var percentage = Math.round((value - min) * 100 / range);
-  var nextObj = obj.next();
-  nextObj.find("span.bar-btn").css("left", percentage + "%");
-  nextObj.find("span.bar > span").css("width", percentage + "%");
-  nextObj.find("span.bar-btn > span").text(value);
-};
+function updateValueBubble(pos, value, context) {
+  pos = pos || context.position;
+  value = value || context.value;
+  var $valueBubble = $('.rangeslider__value-bubble', context.$range);
+  var tempPosition = pos + context.grabPos;
+  var position = (tempPosition <= context.handleDimension) ? context.handleDimension : (tempPosition >= context.maxHandlePos) ? context.maxHandlePos : tempPosition;
+
+  if ($valueBubble.length) {
+    $valueBubble[0].style.left = Math.ceil(position) + 'px';
+    $valueBubble[0].innerHTML = value;
+  }
+}
+
+$('input[type="range"]').rangeslider({
+  polyfill: false,
+  onInit: function() {
+    this.$range.append($(valueBubble));
+    updateValueBubble(null, null, this);
+  },
+  onSlide: function(pos, value) {
+    updateValueBubble(pos, value, this);
+  }
+});

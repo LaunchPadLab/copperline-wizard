@@ -35,12 +35,12 @@
         <li></li>
         <li></li>
       </ul>
-      <fieldset id="activation-number">
+      <!--<fieldset id="activation-number">-->
         <!--
         <h5>Welcome back, let’s verify your current information!</h5>
         <h5>Welcome back, let’s re-verify your info.</h5>
         -->
-        <h3>
+        <!--<h3>
           Enter the sixteen digit account number on your CopperLine Card:
           <div class="tooltip-item">
             ?
@@ -253,7 +253,7 @@
         <label>Date of Birth</label>
         <div class="inputs half-input">
           <field>
-            <input type="date" name="birthDate"/>
+            <input type="tel" name="birthDate" placeholder="MM/DD/YYYY"/>
           </field>
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
@@ -316,7 +316,7 @@
           </field>
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
-      </fieldset>
+      </fieldset>-->
       <fieldset id="profit">
         <h3>
           What was your approximate profit last year?
@@ -328,16 +328,8 @@
           </div>
         </h3>
         <span class="range-slider">
-          <input class="slider" value="0" min="-80000" max="80000" name="rangeslider" type="range" step="10000" oninput="updateSlider(this)">
-          <span class="slider-container">
-            <span class="bar">
-              <span style="width: 50%;"></span>
-            </span>
-            <span class="bar-btn" style="left: 50%;">
-              <span class="bar-value">0</span>
-            </span>
+          <input class="slider" type="range" value="50" min="-80000" max="80000" step="10000">
           </span>
-        </span>
         <ul class="three-range">
           <li>- $<span>80,000</span></li>
           <li>$0</li>
@@ -378,21 +370,19 @@
         <h3>Corporation Type:</h3>
         <div class="inputs half-input">
           <field>
-            <input type="text" name="corporationType" placeholder=""/>
+            <select name="corporationEdit">
+              <option value="" disabled selected>Select</option>
+              <option value="llc">LLC</option>
+              <option value="scorp">S Corp</option>
+              <option value="ccorp">C Corp</option>
+              <option value="partnership">Partnership</option>
+              <option value="soleproprietor">Sole Proprietor</option>
+            </select>
           </field>
         </div>
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
-      <fieldset id="income">
-        <h3>Personal income of <span>Jan</span> from <span>ABC Technology Company</span> and other sources:</h3>
-        <div class="inputs half-input">
-          <field class="currency-symbol">
-            <input type="tel" name="personalIncome" placeholder="" />
-          </field>
-        </div>
-        <input type="button" name="next" class="next action-button" value="Next" />
-        <a href="" class="skip-button">Skip and come back later</a>
-      </fieldset>
+
       <fieldset id="doesnt-qualify">
         <h5>Sorry, but looks like you don’t qualify.</h5>
         <h3>We have some helpful tips on improving your credit and becoming eligible for one of our plans.</h3>
@@ -410,6 +400,20 @@
         </div>
         <hr><br>
         <p>She’s going to give you some different financing options and verify your revenue prior to funding.</p>
+      </fieldset>
+      <fieldset class="upload">
+        <h3 style="margin-top: -53px;">
+          Michael, here are some offers we selected for you:
+        </h3>
+        <div class="next" style="width: 100%;">
+          <img src="images/test-offer.png">
+        </div>
+      </fieldset>
+      <fieldset class="success">
+        <svg id="checkmark-svg" class="run-animation" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 193.3 193.3"><circle class="animate-svg circle" cx="96.65" cy="96.65" r="94.15"/><polyline class="animate-svg checkmark" points="46.9 101.4 76.9 131.4 146.4 61.9"/></svg>
+        <h5>Thanks, you're all set!</h5>
+        <h3>Funds will be wire transferred into your business checking account.</h3>
+        <input type="button" name="next" class="next action-button" value="Logout" />
       </fieldset>
     </form>
   </section>
@@ -447,8 +451,10 @@
 </script>
 <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/ft3n9g7e';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
 
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="http://andreruffert.github.io/rangeslider.js/assets/rangeslider.js/dist/rangeslider.min.js"></script>
     <script src="javascripts/index.js"></script>
   </body>
 </html>
