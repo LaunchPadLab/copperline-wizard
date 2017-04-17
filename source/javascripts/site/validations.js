@@ -99,10 +99,11 @@ var masks = {
 }
 
 $(document).on('isReady', function () {
+  var serverRendered = ($('#serverRendered').first().attr('checked') === 'checked')
   // Intitialize VForms with validation constraints and masks
   var formCreator = new VForms(constraints, masks)
   // Add validations to each fieldset
   var forms = $('fieldset').toArray().map(function (fieldset) {
-    return new formCreator.Form(fieldset)
+    return new formCreator.Form(fieldset, serverRendered)
   })
 })
