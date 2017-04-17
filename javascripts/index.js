@@ -171,8 +171,7 @@ function updateValueBubble(pos, value, context) {
   pos = pos || context.position;
   value = value || context.value;
   var $valueBubble = $('.rangeslider__value-bubble', context.$range);
-  var tempPosition = pos + context.grabPos;
-  var position = (tempPosition <= context.handleDimension) ? context.handleDimension : (tempPosition >= context.maxHandlePos) ? context.maxHandlePos : tempPosition;
+  var position = pos + context.grabPos;
 
   if ($valueBubble.length) {
     $valueBubble[0].style.left = Math.ceil(position) + 'px';
@@ -417,6 +416,7 @@ var VForms = function (constraints, masks) {
     var self = this
     this.field = $(field) // Field element
     this.input = this.field.find('input').first() // Input element
+    if (!this.input[0]) this.input = this.field.find('select').first() // If input doesn't exiset, look for select
     this.property = this.input.attr('name') // Data property to validate
 
     // Keep track of whether the input has been interacted with
@@ -459,14 +459,14 @@ var VForms = function (constraints, masks) {
 
   /* FORM */
 
-  elements.Form = function (fieldset) {
+  elements.Form = function (fieldset, validateOnInit) {
     // Instance variables
     var self = this
     this.fieldset = $(fieldset) // Fieldset element
     this.nextButton = this.fieldset.find('[name="next"]').first() // "Next" button
     var fieldElements = this.fieldset.find('field').toArray()
 
-    // For each field elemtent, create Field object
+    // For each field element, create Field object
     this.fields = fieldElements.map(function(field) {
       var fieldObject = new elements.Field(field)
       // Bind validations to changes
@@ -478,8 +478,9 @@ var VForms = function (constraints, masks) {
     if (this.fields.length) this.nextButton.addClass('disabled')
 
     // Validation function - validates all fields
-    this.validate = function () {
+    this.validate = function (forced) {
       var messages = this.fields.map(function (field) {
+        if (forced) field.dirty = true
         return field.validate()
       }).filter(exists)
       this.setErrorState(messages)
@@ -489,6 +490,8 @@ var VForms = function (constraints, masks) {
     this.setErrorState = function (messages) {
       this.nextButton.toggleClass('disabled', messages.length > 0)
     }
+
+    if (validateOnInit) this.validate(true)
   }
 
   return elements
@@ -575,7 +578,7 @@ var constraints = {
     presence: true
   },
   corporationEdit: {
-
+    presence: true
   },
   personalIncome: {
     presence: true,
@@ -595,11 +598,12 @@ var masks = {
 }
 
 $(document).on('isReady', function () {
+  var serverRendered = ($('#server-rendered').first().attr('checked') === 'checked')
   // Intitialize VForms with validation constraints and masks
   var formCreator = new VForms(constraints, masks)
   // Add validations to each fieldset
   var forms = $('fieldset').toArray().map(function (fieldset) {
-    return new formCreator.Form(fieldset)
+    return new formCreator.Form(fieldset, serverRendered)
   })
 })
 ;
