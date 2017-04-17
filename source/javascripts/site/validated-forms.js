@@ -15,6 +15,7 @@ var VForms = function (constraints, masks) {
     var self = this
     this.field = $(field) // Field element
     this.input = this.field.find('input').first() // Input element
+    if (!this.input[0]) this.input = this.field.find('select').first() // If input doesn't exiset, look for select
     this.property = this.input.attr('name') // Data property to validate
 
     // Keep track of whether the input has been interacted with

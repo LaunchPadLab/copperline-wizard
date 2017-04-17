@@ -79,7 +79,7 @@ var constraints = {
     presence: true
   },
   corporationEdit: {
-
+    presence: true
   },
   personalIncome: {
     presence: true,
