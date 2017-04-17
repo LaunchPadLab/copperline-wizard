@@ -15,6 +15,7 @@ var VForms = function (constraints, masks) {
     var self = this
     this.field = $(field) // Field element
     this.input = this.field.find('input').first() // Input element
+    if (!this.input[0]) this.input = this.field.find('select').first() // If input doesn't exiset, look for select
     this.property = this.input.attr('name') // Data property to validate
 
     // Keep track of whether the input has been interacted with
@@ -57,14 +58,14 @@ var VForms = function (constraints, masks) {
 
   /* FORM */
 
-  elements.Form = function (fieldset) {
+  elements.Form = function (fieldset, validateOnInit) {
     // Instance variables
     var self = this
     this.fieldset = $(fieldset) // Fieldset element
     this.nextButton = this.fieldset.find('[name="next"]').first() // "Next" button
     var fieldElements = this.fieldset.find('field').toArray()
 
-    // For each field elemtent, create Field object
+    // For each field element, create Field object
     this.fields = fieldElements.map(function(field) {
       var fieldObject = new elements.Field(field)
       // Bind validations to changes
@@ -76,8 +77,9 @@ var VForms = function (constraints, masks) {
     if (this.fields.length) this.nextButton.addClass('disabled')
 
     // Validation function - validates all fields
-    this.validate = function () {
+    this.validate = function (forced) {
       var messages = this.fields.map(function (field) {
+        if (forced) field.dirty = true
         return field.validate()
       }).filter(exists)
       this.setErrorState(messages)
@@ -87,6 +89,8 @@ var VForms = function (constraints, masks) {
     this.setErrorState = function (messages) {
       this.nextButton.toggleClass('disabled', messages.length > 0)
     }
+
+    if (validateOnInit) this.validate(true)
   }
 
   return elements

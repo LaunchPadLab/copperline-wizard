@@ -8,8 +8,7 @@ function updateValueBubble(pos, value, context) {
   pos = pos || context.position;
   value = value || context.value;
   var $valueBubble = $('.rangeslider__value-bubble', context.$range);
-  var tempPosition = pos + context.grabPos;
-  var position = (tempPosition <= context.handleDimension) ? context.handleDimension : (tempPosition >= context.maxHandlePos) ? context.maxHandlePos : tempPosition;
+  var position = pos + context.grabPos;
 
   if ($valueBubble.length) {
     $valueBubble[0].style.left = Math.ceil(position) + 'px';
