@@ -1081,7 +1081,7 @@ Select
 -----------------------*/
 select {
   background-color: #FFFFFF;
-  background-image: url("/images/dropdown.svg");
+  background-image: url("../images/dropdown.svg");
   background-position: right 10px top 50%;
   background-repeat: no-repeat;
   background-size: 15px;
@@ -1090,6 +1090,8 @@ select {
   height: 48px;
   padding: 8px 32px 8px 8px;
   padding: 0.57143rem 2.28571rem 0.57143rem 0.57143rem;
+  margin-bottom: 10px;
+  margin-bottom: 0.71429rem;
   padding: 5px 15px;
   text-overflow: ellipsis;
   width: 100%; }
