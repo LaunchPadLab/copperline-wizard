@@ -49,7 +49,7 @@ Select
 -----------------------*/
 select{
   background-color: $white-base;
-  background-image: url("/images/dropdown.svg");
+  background-image: url("../images/dropdown.svg");
   background-position: right 10px top 50%;
   background-repeat: no-repeat;
   background-size: 15px;
@@ -57,6 +57,7 @@ select{
   cursor: pointer;
   height: 48px;
   @include rem(padding, 8px 32px 8px 8px);
+  @include rem(margin-bottom, 10px);
   padding: 5px 15px;
   text-overflow: ellipsis;
   width: 100%;
