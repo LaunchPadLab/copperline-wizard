@@ -416,7 +416,12 @@ var VForms = function (constraints, masks) {
     var self = this
     this.field = $(field) // Field element
     this.input = this.field.find('input').first() // Input element
-    if (!this.input[0]) this.input = this.field.find('select').first() // If input doesn't exiset, look for select
+    this.isSelect = false // Whether input element is a select
+    if (!this.input[0]) { 
+      // If input doesn't exist, look for select
+      this.input = this.field.find('select').first()
+      this.isSelect = true
+    } 
     this.property = this.input.attr('name') // Data property to validate
 
     // Keep track of whether the input has been interacted with
@@ -453,7 +458,8 @@ var VForms = function (constraints, masks) {
 
     // Pass onchange to input 
     this.onChange = function (handler) {
-      return this.input.on('input', handler)
+      // Bind handler to change or input, based on element type
+      return this.isSelect ? this.input.on('change', handler) : this.input.on('input', handler)
     }
   }
 
