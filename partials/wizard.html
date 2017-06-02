@@ -55,6 +55,19 @@
         </div>
           <input type="button" name="next" class="next action-button add-break" value="Next" />
       </fieldset>
+
+      <fieldset id="general-error-logout">
+        <h3>Sorry, we are experiencing some technical problems on our side.</h3>
+        <p>Log out now, all of your information will be saved. Or you can call 800-260-4897 x 2 for help.</p>
+        <input type="button" name="next" class="next action-button" value="Logout" />
+      </fieldset>
+
+      <fieldset id="account-error-logout">
+        <h3>Sorry, we are unable to establish your account at this time.</h3>
+        <p>We will follow-up with you by e-mail.</p>
+        <input type="button" name="next" class="next action-button" value="Logout" />
+      </fieldset>
+
       <fieldset id="confirm-company">
         <h3>You’re from <span>ABC Technology Company, LLC</span>, is that correct?</h3>
         <input type="button" name="next" class="next action-button" value="Yes" />
@@ -214,9 +227,42 @@
             </div>
           </div>
         </h3>
-        <p>This will not affect your FICO credit score and there will be no inquiry on your credit report.  View <a href="#" target="_blank">terms and conditions</a>.</p>
+        <div>
+          <p>This will not affect your FICO credit score and there will be no inquiry on your credit report.  View </p>
+          <label for="modal-1">
+            <div class="modal-trigger"><u>terms and conditions.</u></div>
+          </label>
+        </div>
         <input type="button" name="next" class="next action-button" value="Yes" />
         <input type="button" name="next" class="next action-button inactive-button" value="No" />
+      </fieldset>
+      <fieldset id="decline-terms">
+        <h3>No problem, we will verify your identity later, so let’s just activate your account for now.</h3>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset id="unable-to-confirm-account">
+        <h3>We are still not able to confirm your account.</h3>
+        <p>We will have someone from our office call you today. What is the best number to reach you?</p>
+        <br>
+        <div class="inputs half-input">
+          <field>
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(111)-111-1111" name="phone"/>
+          </field>
+        </div>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </fieldset>
+      <fieldset id="unable-to-verify">
+        <h3>We are still not able to confirm your identity.</h3>
+        <p>We will have someone from our office call you today. What is the best number to reach you? Or call us at 800-260-4897 and press 2 for customer service.</p>
+        <br>
+        <div class="inputs half-input">
+          <field>
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(111)-111-1111" name="phone"/>
+          </field>
+        </div>
+        <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset id="address">
         <h3>
@@ -439,7 +485,23 @@
   </nav>
 
   <div class="sliding-panel-fade-screen"></div>
+  <div class="modal">
+    <input class="modal-state" id="modal-1" type="checkbox" />
+    <div class="modal-fade-screen">
+      <div class="modal-inner">
+        <div class="modal-close" for="modal-1">&#10005;</div>
+        <h1>Terms & Conditions</h1>
+        <br>
+        <p>By signing, the Company and its Owners / Principals certify that all information and documents submitted in connection with this Verification are true, correct and complete. Additionally, you authorize Copperline Capital, LLC, and any lender, loan facilitator, or other financial services provider, and its affiliates, partnered with Copperline Capital, to obtain and use non-business consumer reports from Experian and any other information regarding the Company and its Owners and Principals under the Fair Credit Reporting Act to conduct a pre-qualification for commercial credit. The products offered by Copperline Capital, and the lenders, loan facilitators, or other financial services providers that it partners with, can be either Business Loans or Commercial Equipment Leases. These products are not consumer loans.</p>
+        <p>Because CopperLine Capital operates on the Internet, it is necessary for you to consent to transact business with us online and electronically. As part of doing business with us, we also need you to consent to our giving you certain disclosures electronically, either via our Site or to the email address you provide to us. By agreeing to the Terms of Use, you agree to receive electronically documents, communications, notices, contracts, and agreements.</p>
+        <p>In regards to business loans available from Funding Circle USA, Inc. and its affiliates (“FC), the Company and its Owners / Principals (individually and collectively, “you”) authorize FC to obtain consumer or personal and business credit reports, references, and other information about you from credit bureaus and other third parties. By signing, you authorize FC to obtain your credit report. FC may obtain your credit report more than once during the application process (if, for example, FC determines based on the amount of time that has elapsed that we need to obtain a new credit report). You acknowledge and understand that obtaining your credit report multiple times might impact your credit score or credit ranking. After the loan is made, FC may also obtain your credit report from time to time in connection with the servicing, collection, or enforcement of the loan, and for other reasons permitted by law. You further authorize us to verify information in your credit report or otherwise submitted to us in connection with your loan application, and you agree that we may contact third parties to verify any such information. Upon request, you will be informed whether or not a consumer report was requested, and if such report was requested, the name and address of the consumer reporting agency that furnished the report. FC may use your credit report for any lawful purpose, including, without limitation, for authentication purposes, to verify fraudulent activity with the U.S. Department of the Treasury Office of Foreign Asset Control lists, to make credit decisions, and for related purposes. In the event your loan application is approved for listing on FC’s marketplace, you agree that we may share certain information derived from your credit report or loan application or other information collected from you during the loan application process with third parties. Such information will be displayed on FC’s marketplace with your listing in a depersonalized manner, and will only be viewable by institutional or accredited registered investors. In furtherance of this authorization, you agree that Copperline may fill out and submit FC application forms, on your behalf, in connection with your application for a business loan.</p>
+        <p>In regards to a business loan offer from R&L Capital: The Merchant (“Applicant”) and owner(s)/principal(s) (“Principals”) identified above, each represents, acknowledges and agrees that: (1) all information provided to R&L Capital, Inc. (“R&L”) in connection with this application is true, correct and complete, and all documents submitted are true and correct copies thereof; (2) Applicant will immediately notify R&L of any change to such information or its financial condition; (3) each Principals hereby provide written instructions under the Fair Credit Reporting Act authorizing R&L to obtain consumer reports, information from his or her personal credit profiles and other information from Experian and any other credit reporting agency (each a “CRA”) solely for prequalification for financing and for no other purpose and to share such credit reports and information only with its affiliates and solely in accordance with restrictions set forth in agreements with the respective CRA; (4) each Principal acknowledges and understands that he or she will be liable under a personal guaranty to be delivered in connection with the financing requested; (5) Applicant authorizes R&L to disclose any information and documents that R&L may obtain in connection with this Application, excluding consumer reports (“Business Information”), including this Application, to other persons or entities (collectively, “Assignees”) that may offer, facilitate or acquire commercial funding such as, but not limited to. funding with daily or weekly repayment features or funding consisting of a purchase of future receivables, such as Merchant Cash Advances (all, “Transactions”). Each Assignee is authorized to use, and further share such Business Information with other Assignees in connection with potential Transactions. Applicant and Principals understand that each Assignee will rely upon the accuracy and completeness of such Business Information in assessing whether to provide financing. R&L, Assignees, and each of their representatives, successors, assigns and designees (collectively, “Recipients”) are each authorized to request and receive any investigative reports, credit reports, statements from creditors or financial institutions, verification of information, or any other information that a Recipient deems necessary in connection with a potential Transaction. Applicant and Principals waive and release any claims against Recipients and any information-providers arising from any act or omission in connection with the request, receipt or release of Business Information. Each Principal represents that he or she is authorized to sign this form on behalf of Applicant.</p>
+      </div>
+    </div>
+  </div>
 </main>
+
+
 <script>
   window.intercomSettings = {
     app_id: "ft3n9g7e",
