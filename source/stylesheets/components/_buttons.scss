@@ -3,16 +3,15 @@
 
 // Main Button
 @mixin button{
-  border-radius: 2px;
   display: inline-block;
   @include font-type($primary-sans-serif, normal, $bold);
   @include rem(padding, 8px);
-  @include s-small;
+  @include s-base;
   @include transition (all 0.3s ease-in-out);
-  letter-spacing: 1px;
   line-height: normal;
   text-align: center;
   text-transform: uppercase;
+  text-decoration: none;
 
   text{
     align: center;
@@ -51,13 +50,11 @@
 
   .button-#{$type}{
     background-color: $bg-1;
-    border: 1px solid $border;
     color: $color;
     @include button;
 
     &:hover{
       background-color: $hover-bg;
-      border: 1px solid $hover-bg;
       color: $hover-color;
       opacity: 1;
     }

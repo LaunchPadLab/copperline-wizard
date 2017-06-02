@@ -23,11 +23,8 @@ Logo
 .logo{
   @include rem(margin-bottom, 0px);
   @include transition(all 0.3s ease-in-out);
-
-  @include media($tablet){
-    float: left;
-    text-align: left;
-  }
+  float: left;
+  text-align: left;
 
   h1{
     color: $grey-base;
@@ -63,6 +60,31 @@ Secure Nav
     color: $grey-base;
     display: inline-block;
     @include s-tiny;
+  }
+}
+
+/*-----------------------
+Logout Block
+-----------------------*/
+.logout-block{
+  display: inline-block;
+  @include rem(margin-top, 8px);
+
+  @include media($tablet){
+    @include rem(margin-top, 17px);
+  }
+
+  &.wizard-logout{
+    @include media($tablet){
+      @include rem(margin-top, 0px);
+      vertical-align: 14px;
+    }
+  }
+
+  a{
+    font-weight: $bold;
+    text-decoration: none;
+    @include rem(margin-left, 15px);
   }
 }
 

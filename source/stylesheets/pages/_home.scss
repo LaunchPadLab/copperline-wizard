@@ -20,7 +20,7 @@ Form Animation
   position: relative;
 }
 
-#msform fieldset {
+#msform fieldset{
   background: $white-base;
   border: 0 none;
   box-sizing: border-box;
@@ -51,7 +51,7 @@ Form Animation
   display: block;
 }
 
-#msform .action-button {
+#msform .action-button, .action-button {
   width: 50%;
   background-color: $orange-base;
   font-weight: bold;
@@ -65,6 +65,10 @@ Form Animation
   outline: none;
   @include transition(all 0.3s ease-in-out);
   @include s-base;
+
+  &:hover{
+    color: $white-base;
+  }
 
   &.inactive-button{
     background-color: $grey-light;
@@ -219,5 +223,23 @@ Success
 
   .next{
     @include horizontal-center;
+  }
+}
+
+/*-----------------------
+Special
+-----------------------*/
+#experian{
+  p{
+    display: inline;
+  }
+
+  label{
+    cursor: pointer;
+    display: inline-block;
+
+    &:hover{
+      opacity: 0.8;
+    }
   }
 }

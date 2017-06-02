@@ -6,6 +6,7 @@
 //= require ./site/panel
 //= require ./site/slider
 //= require ./site/uploader
+//= require ./site/modal
 
 // vv Order matters for these
 

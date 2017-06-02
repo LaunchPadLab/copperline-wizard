@@ -142,7 +142,7 @@ $file-uploader__error: rgb(214, 93, 56);
   }
 }
 
-p.error-message{
+p.error-message, span.error-message{
   background-color: $white-base;
   color: $red-base;
   display: inline-block;
@@ -150,6 +150,11 @@ p.error-message{
   line-height: normal;
   text-align: center;
 }
+
+span.error-message{
+  text-align: left;
+}
+
 
 //File Input
 .fileContainer {

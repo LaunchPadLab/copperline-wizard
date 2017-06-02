@@ -1,0 +1,165 @@
+.main-content-container{
+  height: inherit;
+  @include rem(margin-top, 80px);
+
+  .centered-card{
+    @include center;
+    max-width: 700px;
+  }
+}
+
+.card-block{
+  background-color: $white-base;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  @include rem(padding, 30px);
+  text-align: center;
+
+  @include media($tablet-landscape){
+    @include rem(padding, 40px 30px);
+  }
+
+  hr{
+    border-color: $white-med;
+    display: inline-block;
+    @include rem(margin, 40px 0px 30px);
+    width: 100%;
+  }
+
+  .center-button{
+    @include center;
+
+    .action-button{
+      display: inline-block;
+      float: none;
+    }
+  }
+
+  p a{
+    @include s-small;
+    @include rem(margin-left, 5px);
+  }
+}
+
+.main-content{
+  @include media($tablet-landscape){
+    @include span-columns(7 of 12);
+  }
+}
+
+.detail-blocks{
+  @include media($tablet-landscape){
+    @include span-columns(5 of 12);
+  }
+}
+
+.detail-block{
+  background-color: $white-base;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  @include rem(margin-top, 20px);
+
+  @include media($tablet){
+    @include span-columns(6 of 12);
+  }
+
+  @include media($tablet-landscape){
+    @include span-columns(12 of 12);
+  }
+
+  &:first-child{
+    @include media($tablet-landscape){
+      margin-top: 0px;
+    }
+  }
+
+  h4{
+    background-color: $orange-base;
+    color: $white-base;
+    @include rem(padding, 15px);
+  }
+
+  table{
+    display: inline-block;
+    width: 100%;
+
+   tbody{
+    display: inline-table;
+    width: 100%;
+   }
+
+   tr{
+    width: 100%;
+   }
+
+    td{
+      @include rem(padding, 5px 10px);
+      width: 50%;
+
+      &:first-child{
+        @include rem(padding, 10px 0px 10px 20px);
+      }
+
+      &:last-child{
+        font-weight: $bold;
+        @include rem(padding, 10px 20px 10px 0px);
+      }
+    }
+
+    .highlight{
+      background-color: lighten($orange-base, 40%);
+
+      td{
+        &:last-child{
+          color: $orange-base;
+        }
+      }
+    }
+  }
+}
+
+.your-account{
+  table{
+    @include rem(padding-top, 10px);
+  }
+}
+
+.your-business{
+  table{
+    @include rem(padding, 10px 0px);
+  }
+}
+
+
+.main-content-container{
+  fieldset{
+    background: $white-base;
+    border: 0 none;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0 5%;
+    width: 90%;
+
+    @include media($tablet){
+      margin: 0 calc((100% - 600px)/2);
+      padding: 40px 0px;
+      width: 600px;
+    }
+  }
+
+  .footnote{
+    @include rem(margin-top, 20px);
+  }
+
+  .radio{
+    width: 100%;
+  }
+
+  .contact-block{
+    background-color: #f6f6f6;
+    margin: 30px -35px -49px;
+    padding: 30px;
+
+    p{
+      text-align: left;
+    }
+  }
+}
