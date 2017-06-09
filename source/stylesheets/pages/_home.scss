@@ -253,6 +253,14 @@ Special
     @include media($tablet){
       display: inline-block;
       width: 170px;
+      vertical-align: top;
+    }
+  }
+
+  p{
+    @include media($tablet){
+      display: inline-block;
+      width: calc(100% - 170px);
     }
   }
 }
