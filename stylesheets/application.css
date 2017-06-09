@@ -3840,7 +3840,12 @@ Special
 @media screen and (min-width: 45em) {
   #logout label {
     display: inline-block;
-    width: 170px; } }
+    width: 170px;
+    vertical-align: top; } }
+@media screen and (min-width: 45em) {
+  #logout p {
+    display: inline-block;
+    width: calc(100% - 170px); } }
 
 .main-content-container {
   height: inherit;
