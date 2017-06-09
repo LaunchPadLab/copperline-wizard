@@ -3833,6 +3833,15 @@ Special
   #experian label:hover {
     opacity: 0.8; }
 
+#logout p, #logout label {
+  font-size: 15.5px;
+  font-size: 1.10714rem;
+  line-height: normal; }
+@media screen and (min-width: 45em) {
+  #logout label {
+    display: inline-block;
+    width: 170px; } }
+
 .main-content-container {
   height: inherit;
   margin-top: 80px;
