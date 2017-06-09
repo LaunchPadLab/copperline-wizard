@@ -243,3 +243,16 @@ Special
     }
   }
 }
+
+#logout{
+  p, label{
+    @include s-medium;
+  }
+
+  label{
+    @include media($tablet){
+      display: inline-block;
+      width: 170px;
+    }
+  }
+}
