@@ -6,13 +6,30 @@
     <div>
       <label class="radio"><input id="radio1" type="radio" name="radios"><span class="outer"><span class="inner"></span></span>Right Away</label>
       <label class="radio"><input id="radio2" type="radio" name="radios"><span class="outer"><span class="inner"></span></span>30 Days</label>
-      <label class="radio"><input id="radio3" type="radio" name="radios"><span class="outer"><span class="inner"></span></span>Save it for a rainy day</label>
-      <label class="radio"><input id="radio3" type="radio" name="radios"><span class="outer"><span class="inner"></span></span>Not sure, depends on terms</label>
+      <label class="radio"><input id="radio3" type="radio" name="radios"><span class="outer"><span class="inner"></span></span>At a later date</label>
+      <div class="date-content">
+        <p>Approximate date when you anticipate needing funds:</p>
+        <div class="inputs half-input">
+          <field>
+            <input type="tel" name="birthDate" placeholder="MM/DD/YYYY" data-type="date" id="date-input"/>
+          </field>
+        </div>
+        <input type="button" name="next" class="next action-button" value="Next" />
+      </div>
     </div>
   </fieldset>
 </main>
 
 <script>
+
+  $('.date-content').hide()
+  $('#radio1, #radio2').click(function() {
+    $('.date-content').hide()
+  })
+  $('#radio3').click(function() {
+    $('.date-content').show()
+  })
+
   window.intercomSettings = {
     app_id: "ft3n9g7e",
     name: "Michael", // Full name

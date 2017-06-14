@@ -163,3 +163,14 @@
     }
   }
 }
+
+.inputs{
+  display: inline-block;
+  width: 100%;
+
+  &.half-input field{
+    @include media($tablet){
+      @include span-columns(6 of 12);
+    }
+  }
+}

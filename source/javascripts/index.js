@@ -7,6 +7,8 @@
 //= require ./site/slider
 //= require ./site/uploader
 //= require ./site/modal
+//= require ./site/datepicker
+
 
 // vv Order matters for these
 
