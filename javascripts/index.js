@@ -370,6 +370,7 @@ $("input[data-type='date']").datepicker({
   closeText: 'OK',
   onSelect: function(date, inst) {
     changeMaterialHeader(headerHtml, moment(date, 'MM/DD/YYYY'));
+    $(inst.input).trigger('input')
   },
 });
 
